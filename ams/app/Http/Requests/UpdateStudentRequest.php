@@ -22,7 +22,15 @@ class UpdateStudentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'email' => 'required|email|unique:students',
+            'firstName' => 'required|string',
+            'middleName' => 'nullable|string',
+            'lastName' => 'required|string',
+            'gender' => 'required|string',
+            'age' => 'required|integer',
+            'guardian' => 'required|string',
+            'guardianContact' => 'required|string',
+            'apiKey' => 'required|string|unique:students'
         ];
     }
 }
